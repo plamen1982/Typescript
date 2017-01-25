@@ -5,7 +5,6 @@ var Shape = (function () {
         this.move(x, y);
     }
     Shape.prototype.move = function (x, y) {
-        this.handleError(this.x, this.y);
         this.x = x;
         this.y = y;
         return ("This is your x coordinate: " + this.x + "/n This is your y coordinate: " + this.y);
@@ -18,3 +17,30 @@ var Shape = (function () {
     return Shape;
 }());
 var shape = new Shape(1, 5, 10);
+// Enums
+var Todo = (function () {
+    function Todo(task) {
+        this.tast = task;
+    }
+    return Todo;
+}());
+var TodoStatus;
+(function (TodoStatus) {
+    TodoStatus[TodoStatus["Open"] = 1] = "Open";
+    TodoStatus[TodoStatus["Started"] = 2] = "Started";
+    TodoStatus[TodoStatus["Done"] = 3] = "Done";
+})(TodoStatus || (TodoStatus = {}));
+var myTodo = new Todo("New task");
+myTodo.status = TodoStatus.Open;
+//Defining typed arrays, besides native datatypes we can use our own class types in TypeScript
+var myArray;
+myArray.push('New string');
+var Car = (function () {
+    function Car() {
+        this.engineStarted = false;
+    }
+    Car.prototype.startEngine = function () {
+        this.engineStarted = true;
+    };
+    return Car;
+}());

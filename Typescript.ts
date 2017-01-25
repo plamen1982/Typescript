@@ -21,3 +21,39 @@ class Shape {
 }
 
 let shape = new Shape(1, 5, 10)
+
+// Enums
+
+class Todo {
+    status: number
+    tast :string
+    constructor(task :string) {
+        this.tast = task
+    }
+}
+
+enum TodoStatus{Open = 1, Started, Done}
+let myTodo :Todo = new Todo("New task")
+myTodo.status = TodoStatus.Open
+
+//Defining typed arrays, besides native datatypes we can use our own class types in TypeScript
+
+let myArray: Array<string>;
+myArray.push('New string')
+
+//Defining interface
+
+interface Vehicle {
+    engineStarted :boolean
+    startEngine()
+}
+
+class Car implements Vehicle {
+    engineStarted :boolean
+    constructor() {
+        this.engineStarted = false
+    }
+    startEngine(){
+        this.engineStarted = true;
+    }
+}
